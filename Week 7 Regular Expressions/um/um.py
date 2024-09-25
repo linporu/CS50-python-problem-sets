@@ -1,5 +1,4 @@
 import re
-import sys
 
 
 def main():
@@ -7,7 +6,7 @@ def main():
 
 
 def count(s):
-    pattern = r"^um$|^um[^a-zA-Z]|[^a-zA-Z]um$|[^a-zA-Z]um[^a-zA-Z]"
+    pattern = r"\bum\b"
     if matches := re.findall(pattern, s, re.IGNORECASE):
         return len(matches)
     else:
